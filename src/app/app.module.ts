@@ -5,10 +5,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { AppStoreModule } from './store/app-store.module';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
