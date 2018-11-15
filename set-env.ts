@@ -25,5 +25,7 @@ export const environment = {
 };
 `;
 
-writeFileSync('./src/environments/environment.ts', envConfigFile);
-writeFileSync(`./src/environments/environment.${environment}.ts`, envConfigFile);
+const envFolder = './src/environments';
+
+writeFileSync(`${envFolder}/environment.ts`, envConfigFile);
+writeFileSync(`${envFolder}/environment.${environment}.ts`, envConfigFile);
