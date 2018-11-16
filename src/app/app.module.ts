@@ -8,7 +8,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material/material.module';
 import { AppStoreModule } from './store/app-store.module';
 import { AppRoutingModule } from './routing/app-routing.module';
 
@@ -16,6 +15,8 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { CoreModule } from './core/core.module';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -27,11 +28,12 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'event-app'),
     AngularFireDatabaseModule,
     AppStoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

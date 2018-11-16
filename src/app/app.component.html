@@ -1,15 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<div class="application-layout">
+  <app-header></app-header>
   <div class="container">
-    <button (click)="onIncrement()">Add</button>
-    <button (click)="onDecrement()">Remove</button>
-    <div>
-      {{ value$ | async }}
-    </div>
+    <router-outlet></router-outlet>
   </div>
-
+  <app-footer></app-footer>
 </div>
-
