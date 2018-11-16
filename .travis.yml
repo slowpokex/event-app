@@ -7,7 +7,6 @@ sudo: false
 branches:
   only:
   - master
-  - gh-pages
 
 cache:
   directories:
@@ -19,6 +18,7 @@ cache:
 script:
 #- yarn build --base-href https://slowpokex.github.io/event-app/
 - npm run build
+
 deploy:
   provider: pages
   skip_cleanup: true

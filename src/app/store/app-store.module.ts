@@ -5,11 +5,12 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../environments/environment';
 
 import { reducers, metaReducers } from './reducers';
+import { ModelEffects } from './effects';
 
 @NgModule({
   imports: [
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([ModelEffects]),
     environment.production ? [] : StoreDevtoolsModule.instrument()
   ]
 })
