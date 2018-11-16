@@ -41,3 +41,6 @@ Thumbs.db
 # Additional ignore
 src/environments/environment.ts
 src/environments/environment.prod.ts
+
+# env variables
+.env
