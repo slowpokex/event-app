@@ -17,7 +17,11 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 
-import { rollbarFactory, RollbarErrorHandler, RollbarService } from './rollbar/rollbar.service';
+import {
+  rollbarFactory,
+  RollbarErrorHandler,
+  RollbarService
+} from './rollbar/rollbar.service';
 
 @NgModule({
   declarations: [
