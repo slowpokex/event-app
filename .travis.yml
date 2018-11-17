@@ -16,8 +16,7 @@ cache:
 #- npm install -g yarn
 
 script:
-#- yarn build --base-href https://slowpokex.github.io/event-app/
-- npm run build
+- npm run build -- --base-href /event-app/
 
 deploy:
   provider: pages

@@ -32,6 +32,7 @@
     "firebase": "^5.5.8",
     "hammerjs": "^2.0.8",
     "ngrx-data": "^6.1.0-beta.2",
+    "rollbar": "^2.5.0",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },

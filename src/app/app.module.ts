@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
@@ -17,6 +17,8 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 
+import { rollbarFactory, RollbarErrorHandler, RollbarService } from './rollbar/rollbar.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,10 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
     AppStoreModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: ErrorHandler, useClass: RollbarErrorHandler },
+    { provide: RollbarService, useFactory: rollbarFactory }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
