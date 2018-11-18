@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { MaterialModule } from '../material/material.module';
 
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent
   ],
   imports: [
-    MaterialModule
+    SharedModule
   ],
   exports: [
     HeaderComponent,
