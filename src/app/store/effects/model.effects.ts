@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AngularFireDatabase } from '@angular/fire/database';
-import {exhaustMap, flatMap, pluck} from 'rxjs/operators';
+import { exhaustMap, flatMap, pluck } from 'rxjs/operators';
 
-import * as actions from '../actions';
+import * as actions from '../actions/model.action';
 import { Model } from '../../models/model';
-import {of as observableOf} from 'rxjs';
+import { of as observableOf } from 'rxjs';
 
 
 @Injectable()
 export class ModelEffects {
-  constructor(private actions$: Actions, private db: AngularFireDatabase) {}
+  constructor(private actions$: Actions) {}
 
   // @Effect()
   // increment$ = this.actions$

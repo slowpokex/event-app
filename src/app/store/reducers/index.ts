@@ -34,4 +34,6 @@ export const getValue = createSelector(getModelState, fromModel.getValue);
 
 // Events selector
 export const getEventsState = createFeatureSelector<fromEvent.State>('events');
+export const getEventsValues = createSelector(getEventsState, fromEvent.getEvents);
 export const getEventsPending = createSelector(getEventsState, fromEvent.getPending);
+export const getEventsError = createSelector(getEventsState, fromEvent.getError);

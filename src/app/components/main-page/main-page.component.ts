@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+
+import * as fromEvents from '../../store/reducers';
+import * as eventAction from '../../store/actions/event.action';
 
 @Component({
   selector: 'app-main-page',
@@ -6,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
+  events$ = this.store$.pipe(select(fromEvents.getEventsValues));
+  pending$ = this.store$.pipe(select(fromEvents.getEventsPending));
+  error$ = this.store$.pipe(select(fromEvents.getEventsError));
 
-  constructor() { }
+  constructor(private store$: Store<fromEvents.State>) { }
 
   ngOnInit() {
   }
 
+  onClick() {
+    this.store$.dispatch(new eventAction.FetchEvents());
+  }
 }

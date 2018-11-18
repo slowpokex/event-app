@@ -16,6 +16,7 @@ export class RollbarErrorHandler implements ErrorHandler {
 
   handleError(err: any): void {
     const rollbar = this.injector.get(RollbarService);
+    console.log('error lolka');
     rollbar.error(err.originalError || err);
   }
 }
