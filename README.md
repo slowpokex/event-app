@@ -1,4 +1,4 @@
-# Event application
+# Event app [![Build Status](https://travis-ci.com/slowpokex/event-app.svg?branch=master)](https://travis-ci.com/slowpokex/event-app)
 
 ## Development server
 
