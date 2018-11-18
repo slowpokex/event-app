@@ -1,4 +1,4 @@
-import * as modelAction from '../actions';
+import * as modelAction from '../actions/model.action';
 
 export interface State {
   value: number;

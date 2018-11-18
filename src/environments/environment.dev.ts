@@ -8,5 +8,10 @@ export const environment = {
     projectId: 'event-app-2c286',
     storageBucket: 'event-app-2c286.appspot.com',
     messagingSenderId: '697951337328',
+  },
+  rollbarConfig: {
+    accessToken: 'bf282aca843f4969a49d623b6eb0e15e',
+    captureUncaught: true,
+    captureUnhandledRejections: true,
   }
 };
