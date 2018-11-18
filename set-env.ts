@@ -33,4 +33,6 @@ export const environment = {
 const envFolder = './src/environments';
 
 writeFileSync(`${envFolder}/environment.ts`, envConfigFile);
-writeFileSync(`${envFolder}/environment.${environment}.ts`, envConfigFile);
+if (isProd()) {
+  writeFileSync(`${envFolder}/environment.${environment}.ts`, envConfigFile);
+}
