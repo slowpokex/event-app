@@ -26,6 +26,7 @@ export function reducer(state = initialState, action: EventActions.Actions): Sta
       return {
         ...state,
         pending: false,
+        error: null,
         events
       };
     }
