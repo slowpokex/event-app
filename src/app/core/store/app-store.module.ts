@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+
 import { environment } from '@env/environment';
 
 import { AppFirebaseModule } from '@app/core/firebase';
@@ -16,6 +18,9 @@ import { ModelEffects, EventEffects } from './effects';
       ModelEffects,
       EventEffects
     ]),
+    StoreRouterConnectingModule.forRoot({
+      stateKey: 'router',
+    }),
     environment.production ? [] : StoreDevtoolsModule.instrument()
   ]
 })

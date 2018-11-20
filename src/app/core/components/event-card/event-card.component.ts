@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
+import { Event } from '@app/core/models';
 
 @Component({
   selector: 'app-event-card',
@@ -11,9 +13,14 @@ export class EventCardComponent implements OnInit {
   @Input()
   event: Event;
 
+  @Output()
+  updateCard = new EventEmitter<Event>();
+
+  @Output()
+  deleteCard = new EventEmitter<Event>();
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
