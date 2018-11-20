@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { CoreModule } from '@app/core/core.module';
 import { MainPageComponent } from './page/main-page.component';
 
 @NgModule({
@@ -7,7 +9,8 @@ import { MainPageComponent } from './page/main-page.component';
     MainPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CoreModule
   ],
   exports: [
     MainPageComponent
