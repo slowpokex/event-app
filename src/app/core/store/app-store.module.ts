@@ -8,14 +8,13 @@ import { environment } from '@env/environment';
 
 import { AppFirebaseModule } from '@app/core/firebase';
 import { reducers, metaReducers } from './reducers';
-import { ModelEffects, EventEffects } from './effects';
+import { EventEffects } from './effects';
 
 @NgModule({
   imports: [
     AppFirebaseModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([
-      ModelEffects,
       EventEffects
     ]),
     StoreRouterConnectingModule.forRoot({

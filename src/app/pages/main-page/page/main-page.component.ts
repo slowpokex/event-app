@@ -17,9 +17,6 @@ export class MainPageComponent implements OnInit {
   constructor(private store$: Store<fromEvents.State>) { }
 
   ngOnInit() {
-  }
-
-  onClick() {
     this.store$.dispatch(new eventAction.FetchEvents());
   }
 }

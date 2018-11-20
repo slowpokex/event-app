@@ -5,6 +5,7 @@ import { SharedModule } from '@app/shared';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
+import { AddButtonComponent } from './components/add-button/add-button.component';
 import { TimestampPipe } from './pipes/timestamp.pipe';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { TimestampPipe } from './pipes/timestamp.pipe';
     HeaderComponent,
     FooterComponent,
     EventCardComponent,
-    TimestampPipe
+    TimestampPipe,
+    AddButtonComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { TimestampPipe } from './pipes/timestamp.pipe';
     HeaderComponent,
     FooterComponent,
     EventCardComponent,
-    TimestampPipe
+    TimestampPipe,
+    AddButtonComponent
   ]
 })
 export class CoreModule { }

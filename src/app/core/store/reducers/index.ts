@@ -5,18 +5,29 @@ import {
   ActionReducer,
   MetaReducer
 } from '@ngrx/store';
+import { Params } from '@angular/router';
 
-import * as fromModel from './model.reducer';
-import * as fromEvent from './event.reducer';
+import * as fromEvent from './event';
+import * as fromRouter from '@ngrx/router-store';
+
+
+/**
+ * This is only for Router interface
+ */
+export interface RouterStateUrl {
+  url: string;
+  params: Params;
+  queryParams: Params;
+}
 
 export interface State {
-  model: fromModel.State;
   events: fromEvent.State;
+  router: fromRouter.RouterReducerState<RouterStateUrl>;
 }
 
 export const reducers: ActionReducerMap<State> = {
-  model: fromModel.reducer,
-  events: fromEvent.reducer
+  events: fromEvent.reducer,
+  router: fromRouter.routerReducer,
 };
 
 export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
@@ -27,10 +38,6 @@ export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
   };
 }
 export const metaReducers: MetaReducer<State>[] = [logger];
-
-// Model selector
-export const getModelState = createFeatureSelector<fromModel.State>('model');
-export const getValue = createSelector(getModelState, fromModel.getValue);
 
 // Events selector
 export const getEventsState = createFeatureSelector<fromEvent.State>('events');

@@ -23,7 +23,7 @@ export const DELETE_EVENT_FAILED = '[Event] Delete Event Failed';
 export class FetchEvents implements Action {
   readonly type = FETCH_EVENTS;
 
-  constructor() { }
+  constructor(public payload?: any) { }
 }
 
 export class FetchEventsSuccess implements Action {
