@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-button',
@@ -7,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddButtonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly router: Router) { }
 
   ngOnInit() {
   }
 
   goToEditOrCreate() {
-    console.log('Go to edit/create');
+    this.router.navigate(['/edit']);
   }
 }

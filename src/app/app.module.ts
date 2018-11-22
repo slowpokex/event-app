@@ -6,6 +6,7 @@ import { SharedModule } from '@app/shared';
 import { AppStoreModule } from '@app/core/store';
 import { AppFirebaseModule } from '@app/core/firebase';
 import { AppRoutingModule } from './app-routing.module';
+
 // Components
 import { AppComponent } from './app.component';
 import { CoreModule } from '@app/core/core.module';
@@ -15,7 +16,12 @@ import {
   RollbarErrorHandler,
   RollbarService
 } from '@app/core/services';
-import { AdminPageModule, MainPageModule, LoginPageModule } from '@app/pages';
+import {
+  AdminPageModule,
+  MainPageModule,
+  LoginPageModule,
+  EditPageModule
+} from '@app/pages';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,8 @@ import { AdminPageModule, MainPageModule, LoginPageModule } from '@app/pages';
     // app pages
     AdminPageModule,
     MainPageModule,
-    LoginPageModule
+    LoginPageModule,
+    EditPageModule
   ],
   providers: [
     { provide: ErrorHandler, useClass: RollbarErrorHandler },

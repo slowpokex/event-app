@@ -33,7 +33,6 @@ export class EventReducerAdapter {
     ...state,
     pending: false,
     error: null,
-    events: action.payload
   })
 
   static createEventFailed = (state: State, action: EventActions.Actions): State => ({
