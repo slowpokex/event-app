@@ -17,7 +17,6 @@ import {
   RollbarService
 } from '@app/core/services';
 import {
-  AdminPageModule,
   MainPageModule,
   LoginPageModule,
   EditPageModule
@@ -36,15 +35,14 @@ import {
     SharedModule,
     CoreModule,
     // app pages
-    AdminPageModule,
     MainPageModule,
     LoginPageModule,
     EditPageModule
   ],
-  providers: [
-    { provide: ErrorHandler, useClass: RollbarErrorHandler },
-    { provide: RollbarService, useFactory: rollbarFactory }
-  ],
+  // providers: [
+  //   { provide: ErrorHandler, useClass: RollbarErrorHandler },
+  //   { provide: RollbarService, useFactory: rollbarFactory }
+  // ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

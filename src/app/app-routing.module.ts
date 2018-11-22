@@ -5,6 +5,7 @@ import { MainPageComponent, EditPageComponent } from '@app/pages';
 const ROUTES: Routes = [
   { path: 'main', component: MainPageComponent },
   { path: 'edit', component: EditPageComponent },
+  { path: 'admin', loadChildren: './pages/admin-page/admin-page.module#AdminPageModule' },
   { path: '', redirectTo: '/main', pathMatch: 'full' }
 ];
 

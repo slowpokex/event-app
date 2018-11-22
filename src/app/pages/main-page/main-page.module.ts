@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CoreModule } from '@app/core/core.module';
 import { MainPageComponent } from './page/main-page.component';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { MainPageComponent } from './page/main-page.component';
   ],
   imports: [
     CommonModule,
-    CoreModule
+    CoreModule,
+    SharedModule
   ],
   exports: [
     MainPageComponent
