@@ -1,0 +1,6 @@
+<div class="main-page-container">
+  <div class="event-card-list">
+    <app-event-card  *ngFor="let event of (events$ | async)" [event]="event"></app-event-card>
+  </div>
+  <app-add-button></app-add-button>
+</div>

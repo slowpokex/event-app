@@ -1,0 +1,16 @@
+<div class="add-edit-form" [formGroup]="eventForm">
+  <h1>Add new event</h1>
+  <mat-form-field>
+    <input matInput placeholder="Name" formControlName="name">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput placeholder="Description" formControlName="description"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Image url" formControlName="picture">
+  </mat-form-field>
+  <div class="add-edit-form-actions">
+    <button type="button" (click)="onClickAdd()">Add new event</button>
+    <button type="button" (click)="onClickBack()">Back to main</button>
+  </div>
+</div>

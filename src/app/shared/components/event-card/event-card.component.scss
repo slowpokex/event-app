@@ -1,0 +1,10 @@
+.event-card {
+  max-width: 300px;
+  max-height: 400px;
+  margin: 16px;
+
+  .event-card-image {
+    object-fit: cover;
+    height: 250px;
+  }
+}
