@@ -32,17 +32,17 @@ import {
     AppFirebaseModule,
     AppStoreModule,
     AppRoutingModule,
-    SharedModule,
+    SharedModule.forRoot(),
     CoreModule,
     // app pages
     MainPageModule,
     LoginPageModule,
     EditPageModule
   ],
-  // providers: [
-  //   { provide: ErrorHandler, useClass: RollbarErrorHandler },
-  //   { provide: RollbarService, useFactory: rollbarFactory }
-  // ],
+  providers: [
+    { provide: ErrorHandler, useClass: RollbarErrorHandler },
+    { provide: RollbarService, useFactory: rollbarFactory }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

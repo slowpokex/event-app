@@ -1,10 +1,17 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent, FooterComponent, EventCardComponent, AddButtonComponent } from './components';
+import {
+  HeaderComponent,
+  FooterComponent,
+  EventCardComponent,
+  AddButtonComponent,
+  LoaderComponent,
+} from './components';
 import { TimestampPipe } from './pipes';
 import { RouterModule } from '@angular/router';
+import { LoaderService } from './components/loader/services/loader.service';
 
 @NgModule({
   declarations: [
@@ -13,6 +20,7 @@ import { RouterModule } from '@angular/router';
     EventCardComponent,
     AddButtonComponent,
     TimestampPipe,
+    LoaderComponent,
   ],
   imports: [
     CommonModule,
@@ -27,10 +35,23 @@ import { RouterModule } from '@angular/router';
     EventCardComponent,
     TimestampPipe,
     AddButtonComponent,
+    LoaderComponent,
 
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+  ],
+  providers: [
+    LoaderService
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: SharedModule,
+      providers: [
+        LoaderService
+      ]
+    };
+  }
+}
