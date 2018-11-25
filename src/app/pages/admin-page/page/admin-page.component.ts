@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoaderService } from '@app/shared/components/loader/services/loader.service';
 
 @Component({
   selector: 'app-admin-page',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public loaderService: LoaderService
+  ) { }
 
   ngOnInit() {
+  }
+
+  testLoad() {
+    this.loaderService.showLoader();
+    setTimeout(() => this.loaderService.hideLoader(), 1000);
   }
 
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminPageComponent } from './page/admin-page.component';
 import { AdminPageRouterModule } from './admin-page-router.module';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { AdminPageRouterModule } from './admin-page-router.module';
   ],
   imports: [
     CommonModule,
-    AdminPageRouterModule
+    AdminPageRouterModule,
+    SharedModule
   ],
   exports: [
     AdminPageComponent

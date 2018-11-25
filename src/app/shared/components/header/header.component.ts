@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoaderService } from '../loader/services/loader.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public loaderService: LoaderService
+  ) {
+  }
 
   ngOnInit() {
+  }
+
+  testLoad() {
+    this.loaderService.showLoader();
+    setTimeout(() => this.loaderService.hideLoader(), 1000);
   }
 
 }
